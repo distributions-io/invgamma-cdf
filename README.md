@@ -7,7 +7,7 @@ Cumulative Distribution Function
 The [cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function) for a [Inverse Gamma](https://en.wikipedia.org/wiki/Inverse Gamma_distribution) random variable is
 
 <div class="equation" align="center" data-raw-text="F(x; \alpha, \beta) = \frac{\Gamma\left(\alpha,\frac{\beta}{x}\right)}{\Gamma(\alpha)} = Q\left(\frac{\beta}{x},\alpha\right)" data-equation="eq:cdf">
-	<img src="" alt="Cumulative distribution function for a Inverse Gamma distribution.">
+	<img src="https://cdn.rawgit.com/distributions-io/invgamma-cdf/6f2e440be7aa9c48a5a76f3f8239ae1ab007e8b4/docs/img/eqn.svg" alt="Cumulative distribution function for a Inverse Gamma distribution.">
 	<br>
 </div>
 
