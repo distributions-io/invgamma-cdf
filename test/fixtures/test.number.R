@@ -1,9 +1,10 @@
 options( digits = 16 )
 library( jsonlite )
+library( pscl )
 
-alpha = 1
-beta = 1
-x = c( -5, -2.5, 0, 2.5, 5 )
+alpha = 0.8
+beta = 1.3
+x = c( 1, 2.5, 5, 10, 20 )
 y = pigamma( x, alpha, beta )
 
 cat( y, sep = ",\n" )

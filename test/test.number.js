@@ -43,13 +43,19 @@ describe( 'number cdf', function tests() {
 		for ( var i = 0; i < data.length; i++ ) {
 			actual =  cdf( data[ i ], alpha, beta );
 			if ( isFiniteNumber( actual ) && isFiniteNumber( expected[ i ] ) ) {
-				assert.closeTo( actual, expected[ i ] , 1e-14 );
+				assert.closeTo( actual, expected[ i ] , 1e-12 );
 			}
 		}
 	});
 
 	it( 'should return `NaN` if provided `NaN` as input', function test() {
 		assert.isTrue( isnan( cdf( NaN, alpha, beta ) ) );
+	});
+
+	it( 'should return 0 for a negative number', function test() {
+		assert.strictEqual( cdf( -10, alpha, beta ), 0 );
+		assert.strictEqual( cdf( -1, alpha, beta ), 0 );
+		assert.strictEqual( cdf( -0.1, alpha, beta ), 0 );
 	});
 
 });

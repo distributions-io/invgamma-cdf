@@ -50,14 +50,22 @@ describe( 'partial cdf', function tests() {
 		for ( var i = 0; i < data.length; i++ ) {
 			actual = cdf( data[ i ] );
 			if ( isFiniteNumber( actual ) && isFiniteNumber( expected[ i ] ) ) {
-				assert.closeTo( actual, expected[ i ] , 1e-14 );
+				assert.closeTo( actual, expected[ i ] , 1e-12 );
 			}
 		}
 	});
 
-	it( 'should return `NaN` if provided `NaN` as input', function test() {
+	it( 'returned function should return `NaN` if provided `NaN` as input', function test() {
 		var cdf = partial(  alpha, beta );
 		assert.isTrue( isnan( cdf( NaN ) ) );
+	});
+
+	it( 'returned function should return 0 for a negative number', function test() {
+		var cdf;
+		cdf = partial(  alpha, beta );
+		assert.strictEqual( cdf( -10 ), 0 );
+		assert.strictEqual( cdf( -1 ), 0 );
+		assert.strictEqual( cdf( -0.1 ), 0 );
 	});
 
 });
